@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>दिवाली की शुभकामनाएं 🪔</title>
+    
+    <!-- Open Graph / WhatsApp Preview -->
+    <meta property="og:title" content="🪔 Happy Diwali - दिवाली की शुभकामनाएं">
+    <meta property="og:description" content="आपके लिए एक खास Diwali Gift! 🎁 दीपों का त्यौहार मुबारक हो! ✨">
+    <meta property="og:image" content="https://www.surajrana.dev/happydiwali/preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://www.surajrana.dev/happydiwali/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Happy Diwali">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🪔 Happy Diwali - दिवाली की शुभकामनाएं">
+    <meta name="twitter:description" content="आपके लिए एक खास Diwali Gift! 🎁">
+    <meta name="twitter:image" content="https://www.surajrana.dev/happydiwali/preview.jpg">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fireworks Background -->
+    <canvas id="fireworks"></canvas>
+    
+    <!-- Flying Sky Lanterns (Candles) -->
+    <div class="sky-lantern">
+        <div class="lantern-glow"></div>
+        <div class="lantern-flame"></div>
+        <div class="lantern-body"></div>
+    </div>
+    <div class="sky-lantern">
+        <div class="lantern-glow"></div>
+        <div class="lantern-flame"></div>
+        <div class="lantern-body"></div>
+    </div>
+    <div class="sky-lantern">
+        <div class="lantern-glow"></div>
+        <div class="lantern-flame"></div>
+        <div class="lantern-body"></div>
+    </div>
+    <div class="sky-lantern">
+        <div class="lantern-glow"></div>
+        <div class="lantern-flame"></div>
+        <div class="lantern-body"></div>
+    </div>
+    <div class="sky-lantern">
+        <div class="lantern-glow"></div>
+        <div class="lantern-flame"></div>
+        <div class="lantern-body"></div>
+    </div>
+    <div class="sky-lantern">
+        <div class="lantern-glow"></div>
+        <div class="lantern-flame"></div>
+        <div class="lantern-body"></div>
+    </div>
+    <div class="sky-lantern">
+        <div class="lantern-glow"></div>
+        <div class="lantern-flame"></div>
+        <div class="lantern-body"></div>
+    </div>
+    <div class="sky-lantern">
+        <div class="lantern-glow"></div>
+        <div class="lantern-flame"></div>
+        <div class="lantern-body"></div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container" id="nameForm">
+        <div class="card">
+            <div class="diya-animation">
+                <div class="diya">
+                    <div class="flame"></div>
+                </div>
+            </div>
+            <h1>🪔 दिवाली की शुभकामनाएं 🪔</h1>
+            <p class="subtitle">अपना नाम लिखें और अपनी शुभकामना शेयर करें</p>
+            <div class="input-group">
+                <input type="text" id="userName" placeholder="अपना नाम लिखें..." maxlength="30">
+                
+                <!-- Image Upload Section -->
+                <div class="image-upload-section">
+                    <label for="userImage" class="image-upload-label">
+                        <div class="upload-preview" id="uploadPreview">
+                            <span class="upload-icon">📷</span>
+                            <span class="upload-text">अपनी फोटो अपलोड करें (Optional)</span>
+                        </div>
+                    </label>
+                    <input type="file" id="userImage" accept="image/*" style="display: none;" onchange="handleImageUpload(event)">
+                    <button onclick="removeImage()" class="btn-remove-image hidden" id="removeImageBtn">
+                        ❌ फोटो हटाएं
+                    </button>
+                </div>
+                
+                <button onclick="createWish()" class="btn-primary">
+                    <span>शुभकामना बनाएं</span>
+                    ✨
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gift Opening Animation -->
+    <div class="gift-container hidden" id="giftContainer">
+        <div class="gift-box" id="giftBox">
+            <div class="gift-lid">
+                <div class="bow"></div>
+            </div>
+            <div class="gift-body"></div>
+        </div>
+        <p class="tap-text">🎁 उपहार खोलने के लिए क्लिक करें 🎁</p>
+    </div>
+
+    <!-- Boat Animation - Ram Lakshman Sita Hanuman returning to Ayodhya -->
+    <div class="boat-animation-container hidden" id="boatAnimationContainer">
+        <div class="river-scene">
+            <!-- Water waves -->
+            <div class="water-waves">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            
+            <!-- Boat with characters -->
+            <div class="boat">
+                <!-- Boat body -->
+                <div class="boat-body"></div>
+                
+                <!-- Characters in boat - Professional SVG Illustrations -->
+                <div class="characters">
+                    <!-- Hanuman Ji (left front) -->
+                    <div class="character hanuman">
+                        <svg viewBox="0 0 100 160" class="character-svg">
+                            <!-- Body -->
+                            <ellipse cx="50" cy="110" rx="28" ry="35" fill="#FF6B35"/>
+                            <ellipse cx="50" cy="110" rx="22" ry="30" fill="#FF8C5A"/>
+                            
+                            <!-- Arms -->
+                            <ellipse cx="25" cy="105" rx="10" ry="28" fill="#FF6B35" transform="rotate(-20 25 105)"/>
+                            <ellipse cx="75" cy="105" rx="10" ry="28" fill="#FF6B35" transform="rotate(20 75 105)"/>
+                            
+                            <!-- Tail -->
+                            <path d="M 70 120 Q 85 110, 95 130 Q 100 145, 90 155" stroke="#8B4513" stroke-width="6" fill="none" stroke-linecap="round"/>
+                            
+                            <!-- Head -->
+                            <circle cx="50" cy="60" r="28" fill="#FF6B35"/>
+                            <circle cx="50" cy="60" r="24" fill="#FF8C5A"/>
+                            
+                            <!-- Face details -->
+                            <ellipse cx="42" cy="55" rx="4" ry="5" fill="#000"/>
+                            <ellipse cx="58" cy="55" rx="4" ry="5" fill="#000"/>
+                            <ellipse cx="50" cy="68" rx="3" ry="4" fill="#6B3410"/>
+                            <path d="M 40 72 Q 50 76, 60 72" stroke="#000" stroke-width="2" fill="none"/>
+                            
+                            <!-- Ears -->
+                            <ellipse cx="22" cy="55" rx="8" ry="12" fill="#FF6B35"/>
+                            <ellipse cx="78" cy="55" rx="8" ry="12" fill="#FF6B35"/>
+                            
+                            <!-- Mace (Gada) -->
+                            <rect x="10" y="90" width="6" height="40" fill="#8B4513" rx="3"/>
+                            <circle cx="13" cy="85" r="8" fill="#B8860B"/>
+                            <circle cx="13" cy="85" r="5" fill="#DAA520"/>
+                            
+                            <!-- Legs -->
+                            <ellipse cx="40" cy="145" rx="8" ry="15" fill="#FF6B35"/>
+                            <ellipse cx="60" cy="145" rx="8" ry="15" fill="#FF6B35"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Ram Ji (center) -->
+                    <div class="character ram">
+                        <svg viewBox="0 0 100 180" class="character-svg">
+                            <!-- Crown -->
+                            <path d="M 30 25 L 35 15 L 40 25 L 45 10 L 50 25 L 55 10 L 60 25 L 65 15 L 70 25 Z" fill="#FFD700" stroke="#DAA520" stroke-width="1"/>
+                            <ellipse cx="50" cy="26" rx="22" ry="5" fill="#FFD700"/>
+                            <circle cx="50" cy="20" r="4" fill="#FF0000"/>
+                            
+                            <!-- Head -->
+                            <circle cx="50" cy="50" r="20" fill="#D4A574"/>
+                            
+                            <!-- Hair -->
+                            <path d="M 32 45 Q 30 35, 35 30 Q 40 28, 45 30" fill="#000"/>
+                            <path d="M 68 45 Q 70 35, 65 30 Q 60 28, 55 30" fill="#000"/>
+                            
+                            <!-- Tilak -->
+                            <rect x="48" y="35" width="4" height="12" fill="#FF0000" rx="2"/>
+                            <ellipse cx="50" cy="35" rx="3" ry="3" fill="#FF0000"/>
+                            
+                            <!-- Face -->
+                            <ellipse cx="42" cy="48" rx="3" ry="4" fill="#000"/>
+                            <ellipse cx="58" cy="48" rx="3" ry="4" fill="#000"/>
+                            <path d="M 45 57 Q 50 59, 55 57" stroke="#8B4513" stroke-width="2" fill="none"/>
+                            <ellipse cx="50" cy="54" rx="2" ry="2" fill="#6B3410"/>
+                            
+                            <!-- Necklace -->
+                            <ellipse cx="50" cy="70" rx="18" ry="5" fill="none" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="50" cy="75" r="3" fill="#FFD700"/>
+                            
+                            <!-- Body (Blue Dhoti) -->
+                            <path d="M 32 75 L 28 110 L 35 145 L 45 145 L 50 110 L 55 145 L 65 145 L 72 110 L 68 75 Z" fill="#1E40AF" stroke="#1E3A8A" stroke-width="1"/>
+                            <ellipse cx="50" cy="75" rx="20" ry="12" fill="#3B82F6"/>
+                            
+                            <!-- Arms -->
+                            <ellipse cx="25" cy="90" rx="8" ry="22" fill="#D4A574" transform="rotate(-15 25 90)"/>
+                            <ellipse cx="75" cy="90" rx="8" ry="22" fill="#D4A574" transform="rotate(15 75 90)"/>
+                            
+                            <!-- Bow -->
+                            <path d="M 5 70 Q 2 90, 5 110" stroke="#8B4513" stroke-width="4" fill="none"/>
+                            <path d="M 5 70 L 8 72" stroke="#D4A574" stroke-width="1"/>
+                            <path d="M 5 110 L 8 108" stroke="#D4A574" stroke-width="1"/>
+                            
+                            <!-- Armlets -->
+                            <ellipse cx="25" cy="80" rx="9" ry="4" fill="#FFD700"/>
+                            <ellipse cx="75" cy="80" rx="9" ry="4" fill="#FFD700"/>
+                            
+                            <!-- Sacred thread -->
+                            <path d="M 60 75 Q 45 85, 35 110" stroke="#FFF" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Sita Ji (right of Ram) -->
+                    <div class="character sita">
+                        <svg viewBox="0 0 100 180" class="character-svg">
+                            <!-- Head -->
+                            <circle cx="50" cy="45" r="18" fill="#F5CBA7"/>
+                            
+                            <!-- Hair -->
+                            <ellipse cx="50" cy="35" rx="20" ry="15" fill="#000"/>
+                            <path d="M 30 40 Q 25 50, 28 60" fill="#000"/>
+                            <path d="M 70 40 Q 75 50, 72 60" fill="#000"/>
+                            
+                            <!-- Hair bun -->
+                            <circle cx="50" cy="28" r="10" fill="#000"/>
+                            <circle cx="50" cy="28" r="7" fill="#1a1a1a"/>
+                            
+                            <!-- Flowers in hair -->
+                            <circle cx="45" cy="25" r="3" fill="#FFE4E1"/>
+                            <circle cx="50" cy="23" r="3" fill="#FFC0CB"/>
+                            <circle cx="55" cy="25" r="3" fill="#FFE4E1"/>
+                            
+                            <!-- Bindi -->
+                            <circle cx="50" cy="38" r="2" fill="#DC143C"/>
+                            
+                            <!-- Face -->
+                            <ellipse cx="43" cy="44" rx="2" ry="3" fill="#000"/>
+                            <ellipse cx="57" cy="44" rx="2" ry="3" fill="#000"/>
+                            <path d="M 45 52 Q 50 54, 55 52" stroke="#C77" stroke-width="1.5" fill="none"/>
+                            <ellipse cx="50" cy="49" rx="1.5" ry="2" fill="#8B6F47"/>
+                            
+                            <!-- Nose ring -->
+                            <circle cx="54" cy="49" r="2" fill="none" stroke="#FFD700" stroke-width="1"/>
+                            
+                            <!-- Earrings -->
+                            <circle cx="32" cy="48" r="4" fill="#FFD700"/>
+                            <circle cx="68" cy="48" r="4" fill="#FFD700"/>
+                            <ellipse cx="32" cy="55" rx="3" ry="5" fill="#FFD700"/>
+                            <ellipse cx="68" cy="55" rx="3" ry="5" fill="#FFD700"/>
+                            
+                            <!-- Necklace -->
+                            <ellipse cx="50" cy="63" rx="15" ry="4" fill="none" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="50" cy="67" r="2.5" fill="#DC143C"/>
+                            <circle cx="43" cy="65" r="1.5" fill="#FFD700"/>
+                            <circle cx="57" cy="65" r="1.5" fill="#FFD700"/>
+                            
+                            <!-- Saree blouse -->
+                            <ellipse cx="50" cy="75" rx="18" ry="10" fill="#FF1493"/>
+                            <path d="M 32 75 L 30 85 L 35 85 Z" fill="#F5CBA7"/>
+                            <path d="M 68 75 L 70 85 L 65 85 Z" fill="#F5CBA7"/>
+                            
+                            <!-- Saree -->
+                            <path d="M 32 85 L 28 110 L 32 145 L 42 148 L 50 115 L 58 148 L 68 145 L 72 110 L 68 85 Z" fill="#FF69B4" stroke="#FF1493" stroke-width="1"/>
+                            
+                            <!-- Saree pallu (flowing) -->
+                            <path d="M 65 75 Q 75 80, 80 90 Q 82 105, 78 120 L 75 118 Q 78 105, 76 92 Q 72 82, 65 78 Z" fill="#FFB6C1" opacity="0.9"/>
+                            <path d="M 75 85 Q 78 95, 76 108" stroke="#FFD700" stroke-width="1" fill="none"/>
+                            
+                            <!-- Border design on saree -->
+                            <path d="M 32 145 L 68 145" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="38" cy="145" r="1.5" fill="#FFD700"/>
+                            <circle cx="45" cy="145" r="1.5" fill="#FFD700"/>
+                            <circle cx="50" cy="145" r="1.5" fill="#FFD700"/>
+                            <circle cx="55" cy="145" r="1.5" fill="#FFD700"/>
+                            <circle cx="62" cy="145" r="1.5" fill="#FFD700"/>
+                            
+                            <!-- Bangles -->
+                            <circle cx="30" cy="85" r="3" fill="none" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="70" cy="85" r="3" fill="none" stroke="#DC143C" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Lakshman Ji (right) -->
+                    <div class="character lakshman">
+                        <svg viewBox="0 0 100 180" class="character-svg">
+                            <!-- Head -->
+                            <circle cx="50" cy="50" r="19" fill="#D4A574"/>
+                            
+                            <!-- Hair -->
+                            <path d="M 32 43 Q 28 33, 33 28 Q 38 26, 43 28" fill="#000"/>
+                            <path d="M 68 43 Q 72 33, 67 28 Q 62 26, 57 28" fill="#000"/>
+                            <ellipse cx="50" cy="34" rx="18" ry="10" fill="#000"/>
+                            
+                            <!-- Tilak -->
+                            <rect x="48" y="35" width="4" height="12" fill="#FFF" rx="2"/>
+                            <ellipse cx="50" cy="35" rx="3" ry="3" fill="#FFF"/>
+                            
+                            <!-- Face -->
+                            <ellipse cx="42" cy="48" rx="3" ry="4" fill="#000"/>
+                            <ellipse cx="58" cy="48" rx="3" ry="4" fill="#000"/>
+                            <path d="M 45 57 Q 50 59, 55 57" stroke="#8B4513" stroke-width="2" fill="none"/>
+                            <ellipse cx="50" cy="54" rx="2" ry="2" fill="#6B3410"/>
+                            
+                            <!-- Moustache -->
+                            <path d="M 50 55 Q 40 56, 38 54" stroke="#000" stroke-width="1.5" fill="none"/>
+                            <path d="M 50 55 Q 60 56, 62 54" stroke="#000" stroke-width="1.5" fill="none"/>
+                            
+                            <!-- Necklace -->
+                            <ellipse cx="50" cy="69" rx="17" ry="5" fill="none" stroke="#FFD700" stroke-width="2"/>
+                            <circle cx="50" cy="74" r="3" fill="#FFD700"/>
+                            
+                            <!-- Body (Yellow/Orange Dhoti) -->
+                            <path d="M 33 74 L 29 110 L 36 145 L 46 145 L 50 110 L 54 145 L 64 145 L 71 110 L 67 74 Z" fill="#F59E0B" stroke="#D97706" stroke-width="1"/>
+                            <ellipse cx="50" cy="74" rx="19" ry="11" fill="#FCD34D"/>
+                            
+                            <!-- Arms -->
+                            <ellipse cx="26" cy="90" rx="8" ry="22" fill="#D4A574" transform="rotate(-15 26 90)"/>
+                            <ellipse cx="74" cy="90" rx="8" ry="22" fill="#D4A574" transform="rotate(15 74 90)"/>
+                            
+                            <!-- Sword -->
+                            <rect x="82" y="75" width="5" height="45" fill="#8B4513" rx="2"/>
+                            <path d="M 80 73 L 84.5 60 L 89 73 Z" fill="#C0C0C0" stroke="#808080" stroke-width="1"/>
+                            <rect x="82" y="72" width="5" height="6" fill="#DAA520" rx="1"/>
+                            
+                            <!-- Armlets -->
+                            <ellipse cx="26" cy="80" rx="9" ry="4" fill="#FFD700"/>
+                            <ellipse cx="74" cy="80" rx="9" ry="4" fill="#FFD700"/>
+                            
+                            <!-- Sacred thread -->
+                            <path d="M 60 74 Q 45 84, 36 110" stroke="#FFF" stroke-width="2" fill="none"/>
+                            
+                            <!-- Belt -->
+                            <ellipse cx="50" cy="100" rx="20" ry="3" fill="#8B4513"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Oars -->
+                <div class="oar left"></div>
+                <div class="oar right"></div>
+            </div>
+            
+            <!-- Ayodhya in distance -->
+            <div class="ayodhya-city">
+                <div class="temple"></div>
+                <div class="temple"></div>
+                <div class="temple"></div>
+            </div>
+            
+            <!-- Text -->
+            <div class="boat-text">
+                <h2>🏛️ अयोध्या की ओर प्रस्थान 🏛️</h2>
+                <p>भगवान राम, सीता जी, लक्ष्मण और हनुमान जी<br>अयोध्या वापस लौट रहे हैं</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wish Display -->
+    <div class="wish-container hidden" id="wishContainer">
+        <div class="wish-card">
+            <div class="sparkles">
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+            </div>
+            
+            <div class="rangoli"></div>
+            
+            <!-- User Image Circle -->
+            <div class="user-image-container hidden" id="userImageContainer">
+                <div class="user-image-circle">
+                    <img id="displayUserImage" src="" alt="User Photo">
+                </div>
+            </div>
+            
+            <h1 class="name-text" id="displayName"></h1>
+            <h2 class="from-text">की तरफ से</h2>
+            
+            <div class="wish-text">
+                <p class="hindi-wish">
+                    🪔 दीपों का त्यौहार आया है 🪔<br>
+                    खुशियों की बहार लाया है<br>
+                    माँ लक्ष्मी का आशीर्वाद मिले<br>
+                    हर दिन सुनहरा हो जाए<br><br>
+                    ✨ शुभ दीपावली ✨
+                </p>
+            </div>
+
+            <div class="diyas-row">
+                <div class="diya small"><div class="flame"></div></div>
+                <div class="diya small"><div class="flame"></div></div>
+                <div class="diya small"><div class="flame"></div></div>
+            </div>
+
+            <div class="share-buttons">
+                <button onclick="shareWish()" class="btn-share">
+                    📱 WhatsApp पर शेयर करें
+                </button>
+                <button onclick="createYourOwn()" class="btn-create-own">
+                    🪔 Diwali Wish करो अपने दोस्तों को
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
